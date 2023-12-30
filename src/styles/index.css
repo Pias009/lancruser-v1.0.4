@@ -6,6 +6,11 @@ html,body {
   font-family: "Roboto", sans-serif !important;
   margin: 0;
   width: 100%;
-  padding: 0;
+  padding: 10px;
   overflow-x: hidden;
+}
+@media (max-width: 550px) {
+  html, body{
+    padding: 5px;
+  }
 }
