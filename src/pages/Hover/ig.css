@@ -1,0 +1,43 @@
+/* src/components/ImageColumns.css */
+
+.columns-container {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.column-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.column:hover .column-content {
+  background-color: #ccc;
+}
+
+.hover-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.column:hover .hover-container {
+  opacity: 1;
+}
+

@@ -8,6 +8,7 @@ import { Form, Button } from 'react-bootstrap';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import ImageColumns from "pages/Hover/ImageGallery";
 
 
 const Home1Page = () => {
@@ -151,8 +152,6 @@ const Home1Page = () => {
         ))}
       </CardGroup>
 
-
-
       <div className="md:h-[1010px] h-[834px] mt-44 md:px-5 relative w-full">
         <div className="h-[834px] m-auto w-full">
           <Img data-aos="fade-in"
@@ -191,19 +190,22 @@ const Home1Page = () => {
           <Text data-aos="fade-up">read more</Text>
         </a>
       </div>
+      <div className="w-full h-auto mt-20"><ImageColumns /></div>
+
       <div className="bg-black-900 flex flex-col font-lalezar items-center justify-start mt-1 pt-[53px] w-full">
         <div className="flex flex-col gap-[13px] justify-start w-full">
           <div className="flex md:flex-col flex-row gap-3 items-start justify-end md:ml-[0] ml-[545px] md:px-5 w-[58%] md:w-full mt-">
-            <div className="bg-blue_gray-100 h-2 mb-[31px] md:mt-0 mt-[-1px] w-[68%]"></div>
-            <Text data-aos="fade-up"
-              className="md:text-5xl text-[63.2px] text-white-A700 mr-8 mt-[-50px] "
+            <div className="bg-blue_gray-100 h-2 mb-[31px] md:mt-0 mt-[-1px] w-[68%]" data-aos="fade-down"></div>
+
+            <Text data-aos="fade-right"
+              className="md:text-5xl text-[63.2px] text-white-A700 mr-20 mt-[-50px] "
               size="txtLalezarRegular632"
             >
               EXTERIOR
             </Text>
           </div>
           <div className="md:h-[819px] h-[852px] md:px-5 relative w-full">
-            <Text data-aos="fade-up"
+            <Text data-aos="fade-left"
               className="absolute right-[3%] md:text-5xl text-[106.59px] text-yellow-A200 top-[-80px] sm:top-6 sm:ml-5"
               size="txtLalezarRegular12659"
             >
@@ -240,7 +242,7 @@ const Home1Page = () => {
               >
                 PERFORMANCE
               </Text>
-              <div className="bg-blue_gray-100 h-[7px] mb-3 sm:mt-7 mt-[60px] w-[47%]"></div>
+              <div className="bg-blue_gray-100 h-[7px] mb-3 sm:mt-7 mt-[55px] w-[47%] " data-aos="fade-left"></div>
             </div>
             <Text data-aos="fade-up"
               className="md:text-5xl text-[86.82px] text-yellow-A200"
@@ -262,30 +264,9 @@ const Home1Page = () => {
           </div>
         </div>
       </div>
-      <div className="font-lalezar sm:h-[1363px] h-[2144px] md:h-[2656px] mt-32 md:px-5 relative w-full">
-        <div className="absolute flex flex-col inset-x-[0] items-center justify-start mx-auto top-[0] w-full">
-          <div className="md:gap-5 gap-px grid md:grid-cols-1 grid-cols-2 justify-center min-h-[auto] w-full">
-            <Img data-aos="fade-left"
-              className="flex-1 h-[617px] md:h-auto object-cover w-full"
-              src="images/img_rectangle15.png"
-              alt="rectangle"
-            />
-            <Img data-aos="fade-right"
-              className="flex-1 h-[617px] md:h-auto object-cover w-full"
-              src="images/img_rectangle16.png"
-              alt="rectangle"
-            />
-            <Img data-aos="fade-left"
-              className="flex-1 h-[617px] md:h-auto object-cover w-full"
-              src="images/img_rectangle17.png"
-              alt="rectangle"
-            />
-            <Img data-aos="fade-right"
-              className="flex-1 h-[617px] md:h-auto object-cover w-full"
-              src="images/img_rectangle18.png"
-              alt="rectangle"
-            />
-          </div>
+      <div className="font-lalezar sm:h-[1363px] h-[400px] md:h-[2656px] mt-32 md:px-5 relative w-full">
+        <div className="absolute flex flex-col inset-x-[0] items-lerft justify-start mx-auto top-[0] w-full">
+
         </div>
         <div className="absolute bottom-[0] h-[947px] inset-x-[0] mx-auto w-full">
           <Img data-aos="fade-in"
