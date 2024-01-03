@@ -1,4 +1,3 @@
-import React from "react";
 import "../../pages/Home1/home.css"
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
@@ -9,11 +8,18 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ImageColumns from "pages/Hover/ImageGallery";
+import Pi from "pages/Hover/Pi";
+import Power from "components/Charts/Power";
 
 
 const Home1Page = () => {
   useEffect(() => {
-    AOS.init({ offset: 400, duration: 800, easing: 'ease-in-out-quart' });
+    AOS.init({
+      offset: 400,
+      duration: 700,
+      easing: 'ease-in-out-quart',
+      delay: 200,
+    });
   }, []);
 
   const [img, setImg] = useState([
@@ -38,13 +44,13 @@ const Home1Page = () => {
 
   return (
 
-    <div className="bg-black-900 flex flex-col font-inter items-center justify-end mx-auto py-[51px] w-full">
-      <div className="h-[2410px]  md:px-5 relative w-full">
-        <div className="h-[920px] mb-[-0.44px] mx-auto w-full z-[1]">
-          <div className="h-[920px] m-auto w-full">
-
-            <div className="s1  ">
+    <div className="bg-black-900 flex flex-col font-inter items-center justify-end mx-auto py-[51px] w-full relative">
+      <div className="h-[2410px]  md:px-5 relative w-full ">
+        <div className="h-[920px] mb-[-0.44px] mx-auto w-full z-[1] relative">
+          <div className="h-[920px] m-auto w-full relative">
+            <div className="s1 relative ">
               <div className="h-[920px] m-auto w-full">
+
                 <Img data-aos="fade-in"
                   className="h-[920px] m-auto object-cover w-full relative"
                   src="images/img_rectangle1.png"
@@ -69,15 +75,17 @@ const Home1Page = () => {
           </div>
 
         </div>
+        <div className=" absolute h-auto w-auto   " data-aos="flip-up"><Power /></div>
+        <div>
 
-
+        </div>
         <div className="s2">
           <div className="flex flex-col items-center justify-start mt-auto mx-auto w-full">
             <div className="flex flex-col justify-start w-full">
 
               <div className="flex flex-col items-start justify-start md:ml-[0] ml-[33px] mt-[222px] w-[53%] md:w-full">
                 <div className="flex md:flex-col flex-row md:gap-5  items-start justify-start w-[95%] md:w-full">
-                  <Text data-aos="fade-up"
+                  <Text data-aos="fade-left"
                     className=" absolute md:text-5xl text-[73.36px] text-white-A700 sm:mt-[-100px]"
                     size="txtInterBold7336"
                   >
@@ -101,10 +109,10 @@ const Home1Page = () => {
 
 
 
-              <div className="h-[auto] relative w-full  ">
+              <div className="h-[auto] relative w-full text-center justify-center  ">
 
                 <Text data-aos="fade-up"
-                  className=" absolute mr-auto ml-10 mt-[300px]  text-white-A700 w-[27%] sm:w-full sm:mt-[600px] z-[1]  sm:mx-auto"
+                  className=" absolute mr-auto ml-10 mt-[300px]  text-white-A700 w-[27%] sm:w-full sm:mt-[600px]   sm:mx-autoa text-center"
                   size="txtInterBold2039"
                 >
                   Toyota is proud to offer Service Experience,
@@ -191,7 +199,9 @@ const Home1Page = () => {
         </a>
       </div>
       <div className="w-full h-auto mt-20"><ImageColumns /></div>
-
+      <div className="overflow-hiden" data-aos="fade-up">
+        <Pi />
+      </div>
       <div className="bg-black-900 flex flex-col font-lalezar items-center justify-start mt-1 pt-[53px] w-full">
         <div className="flex flex-col gap-[13px] justify-start w-full">
           <div className="flex md:flex-col flex-row gap-3 items-start justify-end md:ml-[0] ml-[545px] md:px-5 w-[58%] md:w-full mt-">
@@ -227,7 +237,6 @@ const Home1Page = () => {
                 </Text>
                 <Line className="absolute bg-yellow-A200 h-1 left-3 right-auto top-[250px] w-[10%]  l-0 bottom-auto " />
               </div>
-
             </div>
           </div>
         </div>
@@ -328,6 +337,8 @@ const Home1Page = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="abslute">
       </div>
     </div>
 

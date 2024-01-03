@@ -1,6 +1,6 @@
 import React from "react";
 import Home1Page from "./Home1";
-import ImageGallery from "./Hover/ImageGallery";
+import { PieChart } from "recharts";
 const Home = () => {
   return (
     <>
