@@ -10,15 +10,37 @@ import 'aos/dist/aos.css';
 import ImageColumns from "pages/Hover/ImageGallery";
 import Pi from "pages/Hover/Pi";
 import Power from "components/Charts/Power";
-
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useRef } from 'react';
+gsap.registerPlugin(ScrollTrigger);
 
 const Home1Page = () => {
+
+  const boxRef = useRef(null);
+
+  useEffect(() => {
+    const box = boxRef.current;
+
+    gsap.from(box, {
+      x: '100%', // Move the box to the left
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: box,
+        start: ' 100+left ', // Start the animation when the top of the box hits the center of the viewport + 100 pixels
+        end: 'right +100px', // End the animation when the bottom of the box hits the center of the viewport
+        scrub: true, // Smoothly animate on scroll
+      },
+    });
+  }, []);
+
+
   useEffect(() => {
     AOS.init({
-      offset: 400,
+      offset: 300,
       duration: 700,
-      easing: 'ease-in-out-quart',
-      delay: 200,
+      delay: 100,
     });
   }, []);
 
@@ -49,8 +71,12 @@ const Home1Page = () => {
         <div className="h-[920px] mb-[-0.44px] mx-auto w-full z-[1] relative">
           <div className="h-[920px] m-auto w-full relative">
             <div className="s1 relative ">
+              <div>
+                <h1>Scroll-Triggered Animation</h1>
+                <div ref={boxRef} style={{ width: '100px', height: '100px', backgroundColor: 'blue' }} />
+                <div style={{ height: '100vh' }}></div>
+              </div>
               <div className="h-[920px] m-auto w-full">
-
                 <Img data-aos="fade-in"
                   className="h-[920px] m-auto object-cover w-full relative"
                   src="images/img_rectangle1.png"
@@ -75,7 +101,7 @@ const Home1Page = () => {
           </div>
 
         </div>
-        <div className=" absolute h-auto w-auto   " data-aos="flip-up"><Power /></div>
+        <div className="absolute h-auto w-auto" data-aos="flip-up"> <Power /> </div>
         <div>
 
         </div>
@@ -129,7 +155,7 @@ const Home1Page = () => {
 
                 <div className="h-[821px] mt-auto mx-auto w-full">
                   <div className="h-[821px] m-auto w-full ">
-                    <Img data-aos="fade-right"
+                    <Img data-aos="fade-out"
                       className="h-[821px]  m-auto object-cover w-full"
                       src="images/img_rectangle4.png"
                       alt="rectangleFour"
@@ -149,9 +175,9 @@ const Home1Page = () => {
         <h1 data-aos="fade-up">Services</h1>
       </div>
 
-      <CardGroup data-aos="fade-up" className="d-flex flex-wrap justify-content-center" >
+      <CardGroup className="d-flex flex-wrap justify-content-center pl-20 pr-20" >
         {cards.map((card, index) => (
-          <Card key={index} className="text-white mt-9m-2 flex-grow-1 bg-transparent " data-aos="fade-left">
+          <Card key={index} className="text-white mt-9m-2 flex-grow-1 bg-transparent " data-aos="fade-out">
             <Card.Body>
               <Card.Title >{card.title}</Card.Title>
               <Card.Text >{card.content}</Card.Text>
@@ -199,14 +225,13 @@ const Home1Page = () => {
         </a>
       </div>
       <div className="w-full h-auto mt-20"><ImageColumns /></div>
-      <div className="overflow-hiden" data-aos="fade-up">
+      <div className="overflow-hiden" >
         <Pi />
       </div>
       <div className="bg-black-900 flex flex-col font-lalezar items-center justify-start mt-1 pt-[53px] w-full">
         <div className="flex flex-col gap-[13px] justify-start w-full">
           <div className="flex md:flex-col flex-row gap-3 items-start justify-end md:ml-[0] ml-[545px] md:px-5 w-[58%] md:w-full mt-">
             <div className="bg-blue_gray-100 h-2 mb-[31px] md:mt-0 mt-[-1px] w-[68%]" data-aos="fade-down"></div>
-
             <Text data-aos="fade-right"
               className="md:text-5xl text-[63.2px] text-white-A700 mr-20 mt-[-50px] "
               size="txtLalezarRegular632"
@@ -261,12 +286,10 @@ const Home1Page = () => {
             </Text>
           </div>
           <div className="flex md:px-5 relative w-full sm:flex-col" data-aos="fade-out">
-
             <CardGroup>
               {img.map((img, index) => (
                 <Card key={index} className="bg-transparent">
                   <Card.Img variant="top" src={img.imageSrc} />
-
                 </Card>
               ))}
             </CardGroup>

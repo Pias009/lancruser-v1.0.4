@@ -1,7 +1,17 @@
 import React from 'react';
 import '../Hover/ig.css';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ImageColumns = () => {
+    useEffect(() => {
+        AOS.init({
+            offset: 300,
+            duration: 700,
+            delay: 100,
+        });
+    }, []);
     const images = [
         'public/images/img_rectangle12.png',
         'public/images/img_rectangle14.png',
@@ -46,14 +56,14 @@ const ImageColumns = () => {
                 <div
                     id={`hover-box-${colNumber}`}
                     key={colNumber}
-                    className={`pl-10 column column-${colNumber} flex text-center border-1 border-solid h-[80px] w-[100%] `}
+                    className={`pl-10 column column-${colNumber} flex text-center border-1 border-solid h-[60px] w-[100%] bg-slate-600 `}
                     onMouseEnter={() => handleHover(colNumber)}
                     onMouseLeave={handleLeave}
 
                 >
-                    <img className="w-20 h-20" src={images[colNumber - 1]} alt={`Image ${colNumber}`} />
-                    <div className='absolute ml-[200px] '> <p className='mx-auto font-serif text-white-A700 mt-10 '>{Text[colNumber - 1]}</p></div>
-                    <div className=' absolute ml-[800px] text '> <p className='mx-auto font-serif text-white-A700 mt-10 text-right'>{Textt[colNumber - 1]}</p></div>
+                    <img data-aos="fade-right" className="w-20 h-20" src={images[colNumber - 1]} alt={`Image ${colNumber}`} />
+                    <div data-aos="fade-up" className='absolute ml-[200px] '> <p className='mx-auto font-serif text-white-A700 mt-4 '>{Text[colNumber - 1]}</p></div>
+                    <div data-aos="fade-right" className=' absolute ml-[800px] text '> <p className='mx-auto font-serif text-white-A700 mt-4 text-right'>{Textt[colNumber - 1]}</p></div>
 
 
                 </div>
@@ -66,7 +76,7 @@ const ImageColumns = () => {
                     className="hidden fixed inset-0 flex items-center justify-center"
                 >
                     <div className="w-1/2 bg-white p-4 rounded-lg bg-transparent">
-                        <img className="w-[400px] h-[400px]" src={images[colNumber - 1]} alt={`Image ${colNumber}`} />
+                        <img data-aos="fade-right" className="w-[400px] h-[400px]" src={images[colNumber - 1]} alt={`Image ${colNumber}`} />
 
                     </div>
                 </div>
