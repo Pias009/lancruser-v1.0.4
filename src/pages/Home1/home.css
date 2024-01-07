@@ -1,5 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Cairo');
+
 .body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
+
+
+
+#h1 {
+  background-image: url(https://media.giphy.com/media/Q34Q46x7bUUKJfbn0s/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+}
+#f2 {
+  background-image: url();
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+}
+#j2 {
+  background-image: url(https://media.giphy.com/media/ZcadyXfC3hpDfNJvzV/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+}
+

@@ -7,7 +7,7 @@ import 'aos/dist/aos.css';
 const ImageColumns = () => {
     useEffect(() => {
         AOS.init({
-            offset: 300,
+            offset: 100,
             duration: 700,
             delay: 100,
         });
@@ -16,21 +16,26 @@ const ImageColumns = () => {
         'public/images/img_rectangle12.png',
         'public/images/img_rectangle14.png',
         'public/images/img_rectangle13.png',
+        'public/images/d.png',
+        'public/images/i.jpg',
+        'public/images/3.webp',
     ];
 
     const Text = [
         'V6 3.3l ',
         'Displacement (cc)',
         '700Nm@1600-2600rpm',
-        'Non of cylinder',
-        'Turbo Charge ',
-        'Gear Box '
+        'Premium Dasbord',
+        'Power Streing ',
+        'Cup Holder '
     ];
     const Textt = [
         'Turbo Diesel Engine',
         '6',
         'Twin',
-        '10-Speed Hybrid'
+        'With Leader ',
+        'Glosy Finish',
+        'With Frege hiter',
     ];
 
     const handleHover = (colNumber) => {
@@ -52,7 +57,7 @@ const ImageColumns = () => {
 
     return (
         <div className="flex-row">
-            {[1, 2, 3].map((colNumber) => (
+            {[1, 2, 3, 4, 5, 6].map((colNumber) => (
                 <div
                     id={`hover-box-${colNumber}`}
                     key={colNumber}

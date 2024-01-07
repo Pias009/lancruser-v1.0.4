@@ -13,7 +13,11 @@ import Power from "components/Charts/Power";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useRef } from 'react';
+import LazyLoad from "react-lazyload";
 gsap.registerPlugin(ScrollTrigger);
+
+
+
 
 const Home1Page = () => {
 
@@ -66,49 +70,42 @@ const Home1Page = () => {
 
   return (
 
-    <div className="bg-black-900 flex flex-col font-inter items-center justify-end mx-auto py-[51px] w-full relative">
+    <div className="bg-black-900 flex flex-col font-inter items-center justify-end mx-auto  w-full relative">
       <div className="h-[2410px]  md:px-5 relative w-full ">
         <div className="h-[920px] mb-[-0.44px] mx-auto w-full z-[1] relative">
           <div className="h-[920px] m-auto w-full relative">
             <div className="s1 relative ">
-              <div>
-                <h1>Scroll-Triggered Animation</h1>
-                <div ref={boxRef} style={{ width: '100px', height: '100px', backgroundColor: 'blue' }} />
-                <div style={{ height: '100vh' }}></div>
-              </div>
-              <div className="h-[920px] m-auto w-full">
-                <Img data-aos="fade-in"
-                  className="h-[920px] m-auto object-cover w-full relative"
-                  src="images/img_rectangle1.png"
-                  alt="rectangleOne"
-                />
+              <div className="h-[920px] m-auto w-full ">
+                <LazyLoad height={[920]} once>
+                  <Img data-aos="fade-in"
+                    className="h-[920px] m-auto object-cover w-full relative"
+                    src="images/img_rectangle1.png"
+                    alt="rectangleOne"
+                  />
+                </LazyLoad>
 
                 <Text data-aos="fade-right"
                   className="absolute bottom-auto top-[500px]  sm:text-[50.9px] sm:mt-5 md:text-[36.9px] target: right-[6%] md:text-5xl text-[85.26px] text-white-A700"
-                  size="txtInterBold8526"
+                  size="txtInterBold8526" i
                 >
                   THE
                 </Text>
               </div>
-              <Text data-aos="fade-right"
-                className="absolute sm:mr-5  bottom-auto top-[570px] sm:text-[50.9px] md:text-[36.9px] right-[5%] md:text-5xl text-[105.73px] text-yellow-A200"
+              <Text id="h1" data-aos="fade-right"
+                className="absolute sm:mr-5  bottom-auto top-[600px] sm:text-[50.9px] md:text-[36.9px] right-[5%] md:text-5xl text-[105.73px] text-yellow-A200"
                 size="txtInterBold10573"
               >
                 CONQUROR
               </Text>
-
             </div>
           </div>
-
         </div>
         <div className="absolute h-auto w-auto" data-aos="flip-up"> <Power /> </div>
         <div>
-
         </div>
         <div className="s2">
           <div className="flex flex-col items-center justify-start mt-auto mx-auto w-full">
             <div className="flex flex-col justify-start w-full">
-
               <div className="flex flex-col items-start justify-start md:ml-[0] ml-[33px] mt-[222px] w-[53%] md:w-full">
                 <div className="flex md:flex-col flex-row md:gap-5  items-start justify-start w-[95%] md:w-full">
                   <Text data-aos="fade-left"
@@ -118,7 +115,7 @@ const Home1Page = () => {
                     NEW
                   </Text>
                   <Text data-aos="fade-left"
-                    className=" absolute mt-[130px] md:text-5xl sm:mt-[-45px] text-[104.93px] text-yellow-A200"
+                    className=" absolute mt-[130px] md:text-5xl sm:mt-[-45px] text-[104.93px] text-yellow-A200 "
                     size="txtInterBold10493"
                   >
                     LAND CRUISER
@@ -130,15 +127,10 @@ const Home1Page = () => {
                     THE PRIDE OF THE WORLD
                   </Text>
                 </div>
-
               </div>
-
-
-
               <div className="h-[auto] relative w-full text-center justify-center  ">
-
-                <Text data-aos="fade-up"
-                  className=" absolute mr-auto ml-10 mt-[300px]  text-white-A700 w-[27%] sm:w-full sm:mt-[600px]   sm:mx-autoa text-center"
+                <Text id="j2" data-aos="fade-up"
+                  className=" absolute mr-auto ml-10 mt-[300px]  text-white-A700 w-[20%] sm:w-full sm:mt-[600px]   sm:mx-autoa text-center"
                   size="txtInterBold2039"
                 >
                   Toyota is proud to offer Service Experience,
@@ -150,31 +142,26 @@ const Home1Page = () => {
                   Evolutionary systems & new age tools to ensure a
                   hassle free service experience & quickly respond to
                   all customer needs.
-
                 </Text>
-
                 <div className="h-[821px] mt-auto mx-auto w-full">
                   <div className="h-[821px] m-auto w-full ">
-                    <Img data-aos="fade-out"
-                      className="h-[821px]  m-auto object-cover w-full"
-                      src="images/img_rectangle4.png"
-                      alt="rectangleFour"
-                    />
-
+                    <LazyLoad height={[812]} once>
+                      <Img
+                        className="h-[821px]  m-auto object-cover w-full"
+                        src="images/img_rectangle4.png"
+                        alt="rectangleFour" />
+                    </LazyLoad>
                   </div>
-
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
       <div className=" text-white-A700  text-right ml-auto mr-20 mt-[-300px] sm:mx-auto sm:text-center  sm:mt-[-400px]">
         <h3 data-aos="fade-up">OUR</h3>
         <h1 data-aos="fade-up">Services</h1>
       </div>
-
       <CardGroup className="d-flex flex-wrap justify-content-center pl-20 pr-20" >
         {cards.map((card, index) => (
           <Card key={index} className="text-white mt-9m-2 flex-grow-1 bg-transparent " data-aos="fade-out">
@@ -185,14 +172,15 @@ const Home1Page = () => {
           </Card>
         ))}
       </CardGroup>
-
       <div className="md:h-[1010px] h-[834px] mt-44 md:px-5 relative w-full">
         <div className="h-[834px] m-auto w-full">
-          <Img data-aos="fade-in"
-            className="h-[834px] m-auto object-cover w-full"
-            src="images/img_rectangle6.png"
-            alt="rectangleSix"
-          />
+          <LazyLoad once>
+            <Img
+              className="h-[834px] m-auto object-cover w-full"
+              src="images/img_rectangle6.png"
+              alt="rectangleSix"
+            />
+          </LazyLoad>
           <div className="absolute sm:relative bottom-[19%] h-[290px] left-[2%] w-[62%] md:w-full  " data-aos="fade-up">
             <Text
               className="m-auto md:text-5xl text-[108.03px] text-yellow-A400"
@@ -248,11 +236,13 @@ const Home1Page = () => {
             </Text>
             <div className="absolute h-[819px] inset-[0] justify-center m-auto w-full">
               <div className="h-[819px] m-auto w-full left-3 right-auto">
-                <Img data-aos="fade-up"
-                  className="h-[819px] m-auto object-cover w-full"
-                  src="images/img_toyotalandcruis.png"
-                  alt="toyotalandcruis"
-                />
+                <LazyLoad>
+                  <Img
+                    className="h-[819px] m-auto object-cover w-full"
+                    src="images/img_toyotalandcruis.png"
+                    alt="toyotalandcruis"
+                  />
+                </LazyLoad>
                 <Text data-aos="fade-up"
                   className="absolute left-3 right-auto sm:text-[27.72px] md:text-[29.72px] text-[31.72px] text-yellow-A200 top-[25%]"
                   size="txtLalezarRegular3172"
@@ -286,13 +276,15 @@ const Home1Page = () => {
             </Text>
           </div>
           <div className="flex md:px-5 relative w-full sm:flex-col" data-aos="fade-out">
-            <CardGroup>
-              {img.map((img, index) => (
-                <Card key={index} className="bg-transparent">
-                  <Card.Img variant="top" src={img.imageSrc} />
-                </Card>
-              ))}
-            </CardGroup>
+            <LazyLoad once>
+              <CardGroup>
+                {img.map((img, index) => (
+                  <Card key={index} className="bg-transparent">
+                    <Card.Img variant="top" src={img.imageSrc} />
+                  </Card>
+                ))}
+              </CardGroup>
+            </LazyLoad>
           </div>
         </div>
       </div>
@@ -301,11 +293,13 @@ const Home1Page = () => {
 
         </div>
         <div className="absolute bottom-[0] h-[947px] inset-x-[0] mx-auto w-full">
-          <Img data-aos="fade-in"
-            className="h-[947px] m-auto object-cover w-full"
-            src="images/img_rectangle19.png"
-            alt="rectangleNineteen"
-          />
+          <LazyLoad once>
+            <Img
+              className="h-[947px] m-auto object-cover w-full"
+              src="images/img_rectangle19.png"
+              alt="rectangleNineteen"
+            />
+          </LazyLoad>
           <div className="absolute sm:mt-[-150px] flex flex-col  gap-20 justify-start left-[4%] top-[18%] w-[76%]">
             <div className="flex sm:flex-col flex-row md:gap-10 items-start justify-between w-full">
               <Text data-aos="fade-up"
@@ -316,7 +310,7 @@ const Home1Page = () => {
               </Text>
               <Text data-aos="fade-out"
                 className="sm:mt-20 absolute mt-[200px] md:text-5xl text-[70.81px] text-white-A700"
-                size="txtLalezarRegular7081"
+                size="txtLalezarRegular7081" id="h1"
               >
                 FOLLOW TOYOTA
               </Text>
@@ -363,7 +357,7 @@ const Home1Page = () => {
       </div>
       <div className="abslute">
       </div>
-    </div>
+    </div >
 
   );
 };
